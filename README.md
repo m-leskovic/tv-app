@@ -1,15 +1,10 @@
 # TV App
 
-An app for browsing and filtering through different TV brands and models. 
+An app for browsing through different TV brands and models. 
 
 ## Table of contents
-* [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
-
-## General info
-
-This portfolio was created with the intention of showcasing my projects and skills that I've acquired while making them. 
 
 ## Technologies
 
