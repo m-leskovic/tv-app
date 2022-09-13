@@ -17,13 +17,13 @@ dbConnect(cb => {
 app.get("/brands", (req, res) => {
     db.collection("brands").find().toArray((err, result) => {
         if(err) throw err;
-        res.json({brand: result});
+        res.json(result);
     }) 
 });
 
 app.get("/models", (req, res) => {
     db.collection("models").find().toArray((err, result) => {
         if(err) throw err;
-        res.json({model: result});
+        res.json(result);
     }) 
 });

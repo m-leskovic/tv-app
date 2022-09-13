@@ -3,8 +3,13 @@
 An app for browsing through different TV brands and models. 
 
 ## Table of contents
+* [General info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+
+## General info
+
+This app was created as a sample of a TV store with paging, browsing, filtering, and sorting features.
 
 ## Technologies
 
@@ -14,6 +19,7 @@ This project was created with:
 * CSS
 * React JS
 * MongoDB
+* MobX
 * Express.js
 * Font Awesome Node package
 * React Router Node package
