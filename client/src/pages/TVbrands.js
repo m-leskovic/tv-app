@@ -1,7 +1,7 @@
 import SortBtns from "../components/SortBtns";
 import Pagination from "../components/Pagination";
-import React, { useEffect } from "react"
-import { observer } from "mobx-react-lite"
+import React, { useEffect } from "react";
+import { observer } from "mobx-react-lite";
 
 const TVbrands = observer(({ brandStore }) => {
   useEffect(() => {
@@ -34,6 +34,7 @@ const CurrentBrands = observer(({ currentStore }) => {
       currentStore.currentBrands.map((obj, i) => {
         return (
           <div id="brand-items" key={i}>
+            <img id="brand-logo" src={obj.logo} alt="Brand logo" />
             <p id="brand-name">{obj.brandName}</p>
           </div>
         )
@@ -50,6 +51,7 @@ const BrandsAZ = observer(({ brandsAZ }) => {
       brandsAZ.sortedAZ.map((obj, i) => {
         return (
           <div id="brand-items" key={i}>
+            <img id="brand-logo" src={obj.logo} alt="Brand logo" />
             <p id="brand-name">{obj.brandName}</p>
           </div>
         )
@@ -66,6 +68,7 @@ const BrandsZA = observer(({ brandsZA }) => {
       brandsZA.sortedZA.map((obj, i) => {
         return (
           <div id="brand-items" key={i}>
+            <img id="brand-logo" src={obj.logo} alt="Brand logo" />
             <p id="brand-name">{obj.brandName}</p>
           </div>
         )

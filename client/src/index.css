@@ -108,14 +108,20 @@ button:hover {
 #brand-items {
     width: 24%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(229, 240, 244);
-    box-shadow: 0.1rem 0.1rem 0.2rem rgb(153, 158, 159);
+}
+
+#brand-logo {
+    max-width: 70%;
 }
 
 #brand-name {
-    font-size: 2em;
+    padding: 0.5rem;
+    font-size: 1.1em;
+    background-color: rgb(218, 227, 230);
+    box-shadow: 0.1rem 0.1rem 0.2rem rgb(153, 158, 159);
 }
 
 #model-items {
@@ -234,8 +240,8 @@ button:hover {
     #browse-main-wrapper {
         flex-direction: column;
     }
-    #brand-name {
-        font-size: 1.6em;
+    #brand-logo {
+        max-width: 100%;
     }
     #models-outer-wrapper {
         grid-template-columns: 100%;
@@ -279,7 +285,7 @@ button:hover {
         width: 40%;
     }
     #brand-name {
-        font-size: 1.3em;
+        font-size: 0.9em;
     }
     #model-items {
         width: 40%;
@@ -320,7 +326,7 @@ button:hover {
         gap: 1rem;
     }   
     #brand-name {
-        font-size: 1.1em;
+        font-size: 0.7em;
     } 
     #model-items {
         width: 40%;
