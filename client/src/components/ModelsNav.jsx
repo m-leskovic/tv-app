@@ -1,10 +1,11 @@
 import { observer } from "mobx-react-lite";
 import { action } from "mobx";
+import { Link } from "react-router-dom";
 
-const ModelsNav = observer(({ modelStore }) => {
+const ModelsNav = observer(({ store }) => {
     const search = action(e => {
-        modelStore.search = e.target.value;
-    })
+        store.search = e.target.value;
+    });
     return (
         <div id="search-wrapper">
             <input
@@ -13,7 +14,9 @@ const ModelsNav = observer(({ modelStore }) => {
                 placeholder="Search models"
                 onKeyUp={search}
             />
-            <button id="reset-filters-btn" onClick={()=> window.location.reload()}>Reset filters</button>
+            <button id="reset-filters-btn" onClick={() => window.location.reload()}>
+                <Link to="/models">Reset filters</Link>
+            </button>
         </div>
     )
 })

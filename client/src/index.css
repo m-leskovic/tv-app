@@ -93,7 +93,6 @@ button:hover {
 #brands-wrapper {
     margin-top: 2rem;
     min-height: 65vh;
-    box-shadow: 0.1rem 0.1rem 0.5rem rgb(153, 158, 159);
 }
 
 #brands-wrapper, #models-inner-wrapper {
@@ -101,7 +100,7 @@ button:hover {
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
-    gap: 1.5rem;
+    gap: 1.2rem;
     background-color: rgb(169, 206, 218);
 }
 
@@ -125,12 +124,13 @@ button:hover {
 }
 
 #model-items {
-    width: 22%;
+    width: 30%;
 }
 
 #model-name {
-    padding: 0.5rem;
-    font-size: 1.2em;
+    padding: 0.4rem;
+    max-width: 100%;
+    font-size: 1.1em;
     background-color: rgb(229, 240, 244);
 }
 
@@ -204,7 +204,7 @@ button:hover {
 }
 
 #resolution-wrapper, #screen-wrapper, #technology-wrapper, #refresh-rate-wrapper {
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.8rem;
     width: 85%;
     display: flex;
     flex-direction: column;
@@ -240,17 +240,48 @@ button:hover {
     #browse-main-wrapper {
         flex-direction: column;
     }
+    #search-wrapper {
+        padding: 0 0.5rem;
+        height: 3rem;
+        border: none;
+    }
+    #search-input {
+        font-size: 0.8em;
+    }
+    #reset-filters-btn {
+        padding: 0.4rem;
+        font-size: 0.8em;
+    }
     #brand-logo {
         max-width: 100%;
     }
     #models-outer-wrapper {
         grid-template-columns: 100%;
+        grid-template-rows: 3rem auto auto;
         grid-template-areas:
-            "nav sidebar"
+            "nav nav"
+            "sidebar sidebar"
             "models models";
     }
-    #sidebar-wrapper {
+    #filters-wrapper, #filters-h2 {
         display: none;
+    } 
+    #sidebar-wrapper {
+        flex-direction: row;
+        background-color: rgb(229, 240, 244);
+        border: 1px solid rgb(153, 158, 159);
+    }
+    #sidebar-wrapper h3 {
+        margin: 0.7rem;
+        font-size: 1em;
+    }
+    #sidebar-wrapper label {
+        font-size: 0.8em;
+    }
+    #resolution-wrapper, #screen-wrapper, #technology-wrapper, #refresh-rate-wrapper {
+        gap: 0.4rem;
+        text-align: center;
+        border: none;
     }
     #model-specs {
         font-size: 0.8em;
@@ -264,19 +295,22 @@ button:hover {
     .browse-h2 {
         font-size: 1.2em;
     }
-    .tv-btn, #reset-filters-btn {
+    .tv-btn {
         padding: 0.5rem;
         font-size: 0.7em;
     }
-    #search-wrapper {
-        padding: 0 0.5rem;
-        height: 3rem;
-    } 
-    #search-input {
+    #sidebar-wrapper {
+        padding: 0.4rem;
+    }
+    #sidebar-wrapper h3 {
+        margin: 0.5rem;
         font-size: 0.8em;
     }
-    #models-outer-wrapper {
-        grid-template-rows: 3rem auto;
+    #sidebar-wrapper label {
+        font-size: 0.7em;
+    }
+    #resolution-wrapper, #screen-wrapper, #technology-wrapper, #refresh-rate-wrapper {
+        gap: 0.2rem;
     }
     #models-inner-wrapper {
         padding: 1.5rem;
@@ -289,9 +323,6 @@ button:hover {
     }
     #model-items {
         width: 40%;
-    }
-    #model-name {
-        font-size: 1em;
     }
     #page-wrapper {
         gap: 0.3rem;
@@ -317,6 +348,17 @@ button:hover {
         margin: 0 0.5rem;
         font-size: 0.9em;
     }
+    #sort-wrapper {
+        gap: 0.7rem;
+    }
+    .sort-btn {
+        padding: 0.5rem;
+        font-size: 0.7em;
+    }
+    #search-input {
+        padding: 0.3rem;
+        font-size: 0.7em;
+    }
     #reset-filters-btn {
         padding: 0.4rem;
         font-size: 0.6em;
@@ -328,22 +370,15 @@ button:hover {
     #brand-name {
         font-size: 0.7em;
     } 
-    #model-items {
-        width: 40%;
-    }
     #model-name {
         font-size: 0.8em;
     }
-    #search-input {
-        padding: 0.3rem;
+    #sidebar-wrapper h3 {
+        margin: 0.2rem;
         font-size: 0.7em;
     }
-    #sort-wrapper {
-        gap: 0.7rem;
-    }
-    .sort-btn {
-        padding: 0.5rem;
-        font-size: 0.7em;
+    #sidebar-wrapper label {
+        font-size: 0.6em;
     }
     #page-wrapper {
         gap: 0.2rem;
