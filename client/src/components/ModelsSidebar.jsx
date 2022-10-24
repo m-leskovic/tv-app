@@ -12,6 +12,14 @@ const ModelsSidebar = () => {
       window.location.search = params.toString();
     }
   }
+  const screenChange = e => {
+    let tg = e.target;
+    let name = tg.getAttribute("name");
+    let params = new URLSearchParams(window.location.search);
+    if (params.has("page")) params.delete("page");
+    params.set(name, `${tg.value} inch`);
+    window.location.search = params.toString();
+  }
   return (
     <div id="sidebar-wrapper">
       <div id="filters-wrapper">
@@ -52,25 +60,34 @@ const ModelsSidebar = () => {
         <label htmlFor="30-50">30-50 inch
           <input
             id="30-50"
-            type="checkbox"
+            type="range"
             name="screenSize"
-            value="30-50"
+            min="30"
+            max="50"
+            defaultValue={30}
+            onChange={screenChange}
           />
         </label>
         <label htmlFor="51-70">51-70 inch
           <input
             id="51-70"
-            type="checkbox"
+            type="range"
             name="screenSize"
-            value="51-70"
+            min="51"
+            max="70"
+            defaultValue={51}
+            onChange={screenChange}
           />
         </label>
         <label htmlFor="71">71-98 inch
           <input
             id="71-98"
-            type="checkbox"
+            type="range"
             name="screenSize"
-            value="71-98"
+            min="71"
+            max="98"
+            defaultValue={71}
+            onChange={screenChange}
           />
         </label>
       </div>
