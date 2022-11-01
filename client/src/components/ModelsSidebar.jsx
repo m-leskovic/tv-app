@@ -7,18 +7,9 @@ const ModelsSidebar = () => {
     let value = tg.getAttribute("value");
     if (tg.checked && "URLSearchParams" in window) {
       let params = new URLSearchParams(window.location.search);
-      if (params.has("page")) params.delete("page");
       params.set(name, value);
       window.location.search = params.toString();
     }
-  }
-  const screenChange = e => {
-    let tg = e.target;
-    let name = tg.getAttribute("name");
-    let params = new URLSearchParams(window.location.search);
-    if (params.has("page")) params.delete("page");
-    params.set(name, `${tg.value} inch`);
-    window.location.search = params.toString();
   }
   return (
     <div id="sidebar-wrapper">
@@ -30,7 +21,7 @@ const ModelsSidebar = () => {
         <label htmlFor="2k">2K (1920 x 1080px)
             <input
               id="2k"
-              type="checkbox"
+              type="radio"
               name="resolution"
               value="1920 x 1080"
               onChange={handleChange}
@@ -39,7 +30,7 @@ const ModelsSidebar = () => {
         <label htmlFor="4k">4K (3840 x 2160px)
             <input
               id="4k"
-              type="checkbox"
+              type="radio"
               name="resolution"
               value="3840 x 2160"
               onChange={handleChange}
@@ -48,7 +39,7 @@ const ModelsSidebar = () => {
         <label htmlFor="8k">8K (7680 x 4320px)
             <input
               id="8k"
-              type="checkbox"
+              type="radio"
               name="resolution"
               value="7680 x 4320"
               onChange={handleChange}
@@ -60,34 +51,28 @@ const ModelsSidebar = () => {
         <label htmlFor="30-50">30-50 inch
           <input
             id="30-50"
-            type="range"
-            name="screenSize"
-            min="30"
-            max="50"
-            defaultValue={30}
-            onChange={screenChange}
+            type="radio"
+            name="screenRange"
+            value="30-50 inch"
+            onChange={handleChange}
           />
         </label>
         <label htmlFor="51-70">51-70 inch
           <input
             id="51-70"
-            type="range"
-            name="screenSize"
-            min="51"
-            max="70"
-            defaultValue={51}
-            onChange={screenChange}
+            type="radio"
+            name="screenRange"
+            value="51-70 inch"
+            onChange={handleChange}
           />
         </label>
         <label htmlFor="71">71-98 inch
           <input
             id="71-98"
-            type="range"
-            name="screenSize"
-            min="71"
-            max="98"
-            defaultValue={71}
-            onChange={screenChange}
+            type="radio"
+            name="screenRange"
+            value="71-98 inch"
+            onChange={handleChange}
           />
         </label>
       </div>
@@ -96,7 +81,7 @@ const ModelsSidebar = () => {
         <label htmlFor="LED">LED
             <input
               id="LED"
-              type="checkbox"
+              type="radio"
               name="technology"
               value="LED"
               onChange={handleChange}
@@ -105,7 +90,7 @@ const ModelsSidebar = () => {
         <label htmlFor="OLED">OLED
             <input
               id="OLED"
-              type="checkbox"
+              type="radio"
               name="technology"
               value="OLED"
               onChange={handleChange}
@@ -114,7 +99,7 @@ const ModelsSidebar = () => {
         <label htmlFor="QLED">QLED
             <input
               id="QLED"
-              type="checkbox"
+              type="radio"
               name="technology"
               value="QLED"
               onChange={handleChange}
@@ -126,7 +111,7 @@ const ModelsSidebar = () => {
         <label htmlFor="50Hz">50Hz
             <input
               id="50Hz"
-              type="checkbox"
+              type="radio"
               name="refreshRate"
               value="50Hz"
               onChange={handleChange}
@@ -135,7 +120,7 @@ const ModelsSidebar = () => {
         <label htmlFor="60Hz">60Hz
             <input
               id="60Hz"
-              type="checkbox"
+              type="radio"
               name="refreshRate"
               value="60Hz"
               onChange={handleChange}
@@ -144,7 +129,7 @@ const ModelsSidebar = () => {
         <label htmlFor="120Hz">120Hz
             <input
               id="120Hz"
-              type="checkbox"
+              type="radio"
               name="refreshRate"
               value="120Hz"
               onChange={handleChange}

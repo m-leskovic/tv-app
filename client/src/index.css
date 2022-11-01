@@ -16,6 +16,10 @@ button:hover {
     transform: scale(1.05);
 }
 
+label {
+    width: fit-content;
+}
+
 /* Header */
 
 #header-wrapper {
@@ -276,6 +280,7 @@ button:hover {
         font-size: 1em;
     }
     #sidebar-wrapper label {
+        margin: 0 auto;
         font-size: 0.8em;
     }
     #resolution-wrapper, #screen-wrapper, #technology-wrapper, #refresh-rate-wrapper {
@@ -308,6 +313,9 @@ button:hover {
     }
     #sidebar-wrapper label {
         font-size: 0.7em;
+    }
+    #sidebar-wrapper input {
+        width: 80%;
     }
     #resolution-wrapper, #screen-wrapper, #technology-wrapper, #refresh-rate-wrapper {
         gap: 0.2rem;
