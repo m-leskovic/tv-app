@@ -1,0 +1,625 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Fredoka', sans-serif;
+}
+
+a {
+    color: rgb(22, 22, 23);
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+label {
+    width: fit-content;
+}
+
+/* Header */
+
+#header-wrapper {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+#fa-header-icon {
+    font-size: 2.5em;
+}
+
+/* Navbar */
+
+#main-nav {
+    margin-left: 1.5rem;
+    background-color: rgb(169, 206, 218);
+    border-left: 2px solid rgb(22, 22, 23);
+}
+
+#nav-ul {
+    padding: 0;
+    display: flex;
+}
+
+.nav-li {
+    margin: 0 1rem;
+    font-size: 1.2em;
+    text-align: center;
+    list-style: none;
+}
+
+/* Home */
+
+#tv-h1 {
+    margin: 0 auto;
+    padding: 1rem;
+    width: 90%;
+    font-size: 3em;
+    text-align: center;
+    border-bottom: 1px solid rgb(22, 22, 23);
+}
+
+#browse-main-wrapper {
+    padding: 1rem;
+    min-height: 70vh;
+    display: flex;
+    background-color: rgb(169, 206, 218);
+}
+
+.browse-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-img {
+    max-width: 85%;
+}
+
+.browse-btn {
+    margin-top: 1.5rem;
+}
+
+.browse-btn, .sort-btn, #add-btn, #reset-filters-btn, #submit-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9em;
+    border: transparent;
+    box-shadow: 0.1rem 0.1rem 0.2rem rgb(153, 158, 159);
+}
+
+/* TV brands */
+
+#brands-outer-wrapper {
+    margin-top: 1rem;
+    min-height: 65vh;
+}
+
+#brands-inner-wrapper {
+    padding: 2.5rem;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 1.2rem;
+    background-color: rgb(169, 206, 218);
+}
+
+#brand-items {
+    width: 24%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#brand-logo {
+    max-width: 70%;
+}
+
+#brand-name {
+    padding: 0.5rem;
+    font-size: 1.1em;
+    background-color: rgb(218, 227, 230);
+    box-shadow: 0.1rem 0.1rem 0.2rem rgb(153, 158, 159);
+}
+
+#sort-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.sort-btn {
+    margin-top: 1rem;
+}
+
+/* TV models */
+
+#models-inner-wrapper {
+    position: relative;
+    padding: 2rem;
+    background-color: rgb(169, 206, 218);
+}
+
+#form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 1.2rem;
+}
+
+#model-items {
+    width: 30%;
+}
+
+#model-name {
+    padding: 0.4rem;
+    max-width: 100%;
+    font-size: 1.1em;
+    background-color: rgb(229, 240, 244);
+}
+
+#model-name, #model-specs {
+    text-align: center;
+}
+
+/* TV models nav */
+
+#search-wrapper {
+    padding: 0 1rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 1px solid rgb(153, 158, 159);
+}
+
+#search-input {
+    padding: 0.5rem;
+    width: 60%;
+    font-size: 1em;
+    outline: none;
+}
+
+#search-btn-wrapper {
+    display: flex;
+    gap: 1rem;
+}
+
+#add-btn, #reset-filters-btn {
+    padding: 0.4rem 0.4rem;
+}
+
+/* TV models sidebar */
+
+#models-outer-wrapper {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 5rem auto;
+    grid-template-areas: 
+        "sidebar nav"
+        "sidebar models";
+    box-shadow: 0.1rem 0.1rem 0.5rem rgb(153, 158, 159);
+}
+
+#search-wrapper {
+    grid-area: nav;
+}
+
+#sidebar-wrapper {
+    grid-area: sidebar;
+    padding-left: 0.8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#models-inner-wrapper {
+    grid-area: models;
+}
+
+#filters-h2 {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgb(153, 158, 159);
+}
+
+#resolution-wrapper, #screen-wrapper, #technology-wrapper, #refresh-rate-wrapper {
+    padding-bottom: 0.8rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    text-align: left;
+    border-bottom: 1px solid rgb(153, 158, 159);
+}
+
+/* Create model */
+
+#create-modal-wrapper {
+    position: fixed;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 15%;
+    width: 60vw;
+    background-color: rgb(234, 241, 244);
+    box-shadow: 0.1rem 0.1rem 0.2rem rgb(91, 93, 94);
+}
+
+#cancel-btn {
+    margin-left: auto;
+    font-size: 1.3em;
+    background: none;
+    border: none;
+}
+
+#create-h2 {
+    margin: 0.5rem 0;
+}
+
+#create-form-wrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-label {
+    padding: 0.5rem 0;
+}
+
+#create-form-wrapper > input, .create-radio-label {
+    font-size: 0.9em;
+}
+
+#submit-btn {
+    margin-top: 0.5rem;
+    align-self: center;
+    color: rgb(244, 250, 252);
+    background-color: rgb(104, 119, 162);
+}
+
+/* Edit model */
+
+#edit-form-items {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+#edit-form-items > input {
+    padding: 0.2rem;
+    font-size: 0.9em;
+}
+
+.form-btn:first-child {
+    color: rgb(244, 250, 252);
+    background-color: rgb(104, 119, 162);
+}
+
+.form-btn {
+    margin: 0.3rem 0.3rem 0 0;
+}
+
+/* Delete model */
+
+#delete-model-wrapper {
+    position: absolute;
+    top: 3%;
+    left: 30%;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 20rem;
+    text-align: center;
+    background-color: rgb(238, 245, 248);
+    box-shadow: 0.2rem 0.2rem 0.4rem rgb(91, 93, 94);
+}
+
+#delete-model-title {
+    font-size: 1.3em;
+}
+
+.delete-model-btn:first-child {
+    color: rgb(244, 250, 252);
+    background-color: rgb(208, 21, 21);
+}
+
+.delete-model-btn {
+    margin: 1rem 0.5rem 0 0;
+    padding: 0.3rem;
+    border: none;
+    box-shadow: 0.1rem 0.1rem 0.2rem rgb(91, 93, 94);
+}
+
+/* Pagination */
+
+#page-wrapper {
+    margin: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#page-link {
+    padding: 0.3rem 0.6rem;
+    font-size: 1.1em;
+    text-align: center;
+    border: 1px solid rgb(188, 172, 172);
+}
+
+#page-link:focus {
+    background-color: rgb(188, 172, 172);
+}
+
+.fa-btn {
+    border: transparent;
+    background-color: transparent;
+}
+
+.arrow-page {
+    font-size: 1.5em;
+    align-self: center;
+}
+
+/* Media queries */
+
+@media (max-width: 50rem) { /* 800px */
+    #browse-main-wrapper {
+        flex-direction: column;
+    }
+    .browse-h2 {
+        margin-top: 2rem;
+    }
+    #search-wrapper {
+        padding: 0 0.5rem;
+        height: 3rem;
+        border: none;
+    }
+    #search-input {
+        font-size: 0.8em;
+    }
+    #add-btn, #reset-filters-btn {
+        padding: 0.4rem;
+        font-size: 0.7em;
+    }
+    #brands-inner-wrapper{
+        gap: 1.5rem;
+    }
+    #brand-logo {
+        max-width: 100%;
+    }
+    #models-outer-wrapper {
+        grid-template-columns: 100%;
+        grid-template-rows: 4rem auto auto;
+        grid-template-areas:
+            "nav nav"
+            "sidebar sidebar"
+            "models models";
+    }
+    #filters-wrapper, #filters-h2 {
+        display: none;
+    } 
+    #sidebar-wrapper {
+        flex-direction: row;
+        background-color: rgb(229, 240, 244);
+        border: 1px solid rgb(153, 158, 159);
+    }
+    .sidebar-h3 {
+        margin: 0.7rem;
+        font-size: 1em;
+    }
+    #sidebar-wrapper label {
+        margin: 0 auto;
+        font-size: 0.8em;
+    }
+    #resolution-wrapper, #screen-wrapper, #technology-wrapper, #refresh-rate-wrapper {
+        gap: 0.4rem;
+        text-align: center;
+        border: none;
+    }
+    #model-specs {
+        font-size: 0.8em;
+    }
+    #create-modal-wrapper {
+        left: 12%;
+        width: 75vw;
+    }
+    #delete-model-wrapper {
+        top: 1%;
+        left: 0;
+        width: 16rem;
+    }
+    #delete-model-title {
+        font-size: 1.1em;
+    }
+    .delete-model-btn {
+        margin: 0.7rem 0.5rem 0 0;
+        padding: 0.2rem;
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 37.5rem) { /* 600px */
+    #tv-h1 {
+        font-size: 2em;
+    }
+    .browse-h2 {
+        font-size: 1.2em;
+    }
+    .browse-btn {
+        padding: 0.5rem;
+        font-size: 0.7em;
+    }
+    #sidebar-wrapper {
+        padding: 0.4rem;
+    }
+    .sidebar-h3 {
+        margin: 0.5rem;
+        font-size: 0.8em;
+    }
+    #sidebar-wrapper label {
+        font-size: 0.7em;
+    }
+    #sidebar-wrapper input {
+        width: 80%;
+    }
+    #resolution-wrapper, #screen-wrapper, #technology-wrapper, #refresh-rate-wrapper {
+        gap: 0.2rem;
+    }
+    #models-inner-wrapper {
+        padding: 1.5rem;
+    }   
+    .model-btn {
+        font-size: 0.6em;
+    }
+    #create-h2 {
+        font-size: 1.1em;
+    }
+    #create-form-wrapper {
+        width: 90%;
+    }
+    .create-label {
+        font-size: 0.9em;
+    }
+    #create-form-wrapper > input, .create-radio-label {
+        font-size: 0.7em;
+    }
+    #submit-btn {
+        font-size: 0.7em;
+    }
+    #edit-form-items {
+        width: 50%;
+    }
+    #edit-form-items > input {
+        font-size: 0.7em;
+    }
+    .form-btn {
+        font-size: 0.6em;
+    }
+    #brand-items {
+        width: 40%;
+    }
+    #brand-name {
+        font-size: 0.9em;
+    }
+    #model-items {
+        width: 40%;
+    }
+    #delete-model-wrapper {
+        top: 1%;
+        left: 0;
+        width: 12rem;
+    }
+    #delete-model-title {
+        font-size: 0.9em;
+    }
+    .delete-model-btn {
+        margin: 0.5rem 0.5rem 0 0;
+        padding: 0.2rem;
+        font-size: 0.7em;
+    }
+    #page-wrapper {
+        gap: 0.3rem;
+    }
+    #page-link {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 28.25rem) { /* 452px */
+    #header-wrapper {
+        padding: 0.5rem;
+    }
+    #fa-header-icon{
+        font-size: 1.5em;
+    }
+    #main-nav {
+        margin-left: 1rem;
+    }
+    .nav-li {
+        margin: 0 0.5rem;
+        font-size: 0.9em;
+    }
+    #sort-wrapper {
+        gap: 0.7rem;
+    }
+    .sort-btn {
+        padding: 0.5rem;
+        font-size: 0.7em;
+    }
+    #search-wrapper {
+        margin: 0.5rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #search-input {
+        padding: 0.3rem;
+        width: 90%;
+        font-size: 0.7em;
+    }
+    #search-btn-wrapper {
+        margin: 0.2rem 0;
+    }
+    #add-btn, #reset-filters-btn {
+        padding: 0.2rem;
+        font-size: 0.6em;
+    }
+    #brands-inner-wrapper, #models-inner-wrapper {
+        padding: 2rem 0;
+    }   
+    #brand-name {
+        font-size: 0.7em;
+    } 
+    #model-name {
+        font-size: 0.8em;
+    }
+    .sidebar-h3 {
+        margin: 0.2rem;
+        font-size: 0.7em;
+    }
+    #sidebar-wrapper label {
+        font-size: 0.6em;
+    }
+    #create-modal-wrapper {
+        left: 10%;
+        width: 80vw;
+    }
+    #cancel-btn {
+        font-size: 1.1em;
+    }
+    #create-h2 {
+        font-size: 1em;
+    }
+    .create-label {
+        font-size: 0.8em;
+    }
+    #submit-btn {
+        font-size: 0.6em;
+    }
+    #delete-model-wrapper {
+        padding: 0.5rem;
+        width: 10rem;
+    }
+    #delete-model-title {
+        font-size: 0.7em;
+    }
+    .delete-model-btn {
+        margin: 0.5rem 0.5rem 0 0;
+        padding: 0.2rem;
+        font-size: 0.5em;
+    }
+    #page-wrapper {
+        gap: 0.2rem;
+    }
+    #page-link {
+        padding: 0.1rem 0.3rem;
+        font-size: 0.6em;
+    }
+}
