@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
-import { observer } from 'mobx-react-lite';
-import { action } from 'mobx';
+import { action } from "mobx";
+import { Link } from "react-router-dom";
+import { observer } from "mobx-react-lite";
 
 const SortBtns = observer(({ brandStore }) => {
   const sortAsc = action(() => {
@@ -10,6 +10,7 @@ const SortBtns = observer(({ brandStore }) => {
     params.set("sort", "asc");
     window.location.search = params.toString();
   });
+
   const sortDesc = action(() => {
     brandStore.sortedZA = true;
     brandStore.sortedAZ = false;
@@ -19,13 +20,17 @@ const SortBtns = observer(({ brandStore }) => {
   });
   return (
     <div id="sort-wrapper">
-      <button className="sort-btn" onClick={sortAsc}>Sort A-Z</button>
-      <button className="sort-btn" onClick={sortDesc}>Sort Z-A</button>
+      <button className="sort-btn" onClick={sortAsc}>
+        Sort A-Z
+      </button>
+      <button className="sort-btn" onClick={sortDesc}>
+        Sort Z-A
+      </button>
       <button className="sort-btn">
         <Link to="/brands">Reset</Link>
       </button>
     </div>
-  )
-})
+  );
+});
 
-export default SortBtns
+export default SortBtns;

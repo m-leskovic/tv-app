@@ -1,19 +1,22 @@
-import { observer } from "mobx-react-lite";
 import { action } from "mobx";
+import { observer } from "mobx-react-lite";
 
 const EditModel = observer(({ modelStore }) => {
   let editModel = modelStore.editModel;
   let editId = modelStore.editId;
-  const handleChange = action(e => {
+
+  const handleChange = action((e) => {
     let name = e.target.name;
     let value = e.target.value;
-    const newModel = {...modelStore.editModel};
+    const newModel = { ...modelStore.editModel };
     newModel[name] = value;
     modelStore.editModel = newModel;
   });
+
   const updateModel = () => {
     modelStore.handleUpdate(editId, editModel);
-  }
+  };
+
   const cancelEdit = action(() => {
     modelStore.editId = null;
   });
@@ -43,7 +46,7 @@ const EditModel = observer(({ modelStore }) => {
         value={editModel.resolution}
         onChange={handleChange}
         placeholder="Enter resolution"
-        required 
+        required
       />
       <input
         type="text"
@@ -62,11 +65,15 @@ const EditModel = observer(({ modelStore }) => {
         required
       />
       <div id="form-btns-div">
-        <button className="form-btn" type="submit" onClick={updateModel}>Save</button>
-        <button className="form-btn" onClick={cancelEdit}>Cancel</button>
+        <button className="form-btn" type="submit" onClick={updateModel}>
+          Save
+        </button>
+        <button className="form-btn" onClick={cancelEdit}>
+          Cancel
+        </button>
       </div>
     </div>
-  )
-})
+  );
+});
 
-export default EditModel
+export default EditModel;

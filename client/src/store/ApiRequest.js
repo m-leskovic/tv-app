@@ -5,6 +5,6 @@ const ApiRequest = async (url, options) => {
   } catch (err) {
     if (err) throw Error("Please reload the app.");
   }
-}
+};
 
-export default ApiRequest
+export default ApiRequest;
